@@ -5,7 +5,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 echo 'Installing squid3'
-sudo apt-get install squid3
+sudo apt-get install squid3 -y
 #Backup config file
 sudo cp /etc/squid3/squid.conf /etc/squid3/squid.conf.original
 sudo chmod a-w /etc/squid3/squid.conf.original
