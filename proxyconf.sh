@@ -11,7 +11,7 @@ sudo cp /etc/squid3/squid.conf /etc/squid3/squid.conf.original
 sudo chmod a-w /etc/squid3/squid.conf.original
 
 echo 'Setting configuration'
-sudo echo "acl our_networks src $1/32\nhttp_access allow our_networks" | sudo cat - /etc/squid3/squid.conf > /etc/squid3/temp.conf && sudo mv /etc/squid3/temp.conf /etc/squid3/squid.conf
+sudo printf "\nacl our_networks src $1/32\nhttp_access allow our_networks\n\n\n" | sudo cat - /etc/squid3/squid.conf > /etc/squid3/temp.conf && sudo mv /etc/squid3/temp.conf /etc/squid3/squid.conf
 
 sudo service squid3 restart
 
